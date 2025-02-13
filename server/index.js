@@ -1,14 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const UserRoutes = require("./routes/User.routes");
 
 app.use(express.json());
 
+app.use("/user", UserRoutes);
+
 mongoose
-  .connect("mongodb://localhost:27017/my-database", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect("mongodb://localhost:27017/FixMyTown")
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.log("MongoDB connection error:", error));
 
