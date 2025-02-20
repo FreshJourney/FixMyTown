@@ -14,4 +14,10 @@ const Register = async (req, res) => {
   await NewUser.save();
   return res.status(200).json({ message: "User Created Successfully" });
 };
+
+const Login = (req, res) => {
+  try {
+    const { Email, Password } = req.body;
+  } catch (error) {}
+};
 module.exports = { Register };
