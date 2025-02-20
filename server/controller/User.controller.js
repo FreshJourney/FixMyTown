@@ -18,6 +18,8 @@ const Register = async (req, res) => {
 const Login = (req, res) => {
   try {
     const { Email, Password } = req.body;
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 module.exports = { Register };
